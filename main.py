@@ -13,6 +13,7 @@ class Game:
         while self.running:
             self.clock.tick(FPS)
             self.process_events()
+            self.show()
             pygame.display.update()
 
     def process_events(self):
@@ -20,9 +21,12 @@ class Game:
             if event.type == pygame.QUIT:
                 self.running = False
 
+    def show(self):
+        pass
+
 if __name__ == "__main__":
     pygame.init()
     pygame.display.set_caption("Zombie Survival")
     game = Game(width=700, height=700)
-    game.run(FPS=60)
+    game.run(FPS=144)
     pygame.quit()
